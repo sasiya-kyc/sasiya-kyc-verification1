@@ -1,71 +1,79 @@
+// ================================
+// CONFIG (ඔයාගේ links මෙතන paste කරන්න)
+// ================================
+
+// Contact links (tap -> open)
+// Examples:
+//   WHATSAPP_LINK = "https://wa.me/94XXXXXXXXX"
+//   TELEGRAM_LINK = "https://t.me/yourusername"
+const WHATSAPP_LINK = "";  // <-- PASTE YOUR WHATSAPP LINK HERE
+const TELEGRAM_LINK = "";  // <-- PASTE YOUR TELEGRAM LINK HERE
+
+// Logo image URLs (optional)
+// If you add a URL here, it will replace the default SVG placeholder.
+// Use direct image links (png/svg/webp/jpg). Recommended: SVG/PNG.
+const LOGO_URLS = {
+  bybit: "",        // <-- PASTE BYBIT LOGO DIRECT LINK
+  binance: "",      // <-- PASTE BINANCE LOGO DIRECT LINK
+  cryptobot: "",    // <-- PASTE CRYPTO BOT LOGO DIRECT LINK
+  bitget: "",       // <-- PASTE BITGET LOGO DIRECT LINK
+  hetzner: "",      // <-- PASTE HETZNER LOGO DIRECT LINK
+  oraclecloud: "",  // <-- PASTE ORACLE CLOUD LOGO DIRECT LINK
+  okx: ""           // <-- PASTE OKX LOGO DIRECT LINK
+};
+
+// ================================
+// APP (Visitors can't edit anything)
+// ================================
+
 const modal = document.getElementById('contactModal');
 const moreWorkBtn = document.getElementById('moreWorkBtn');
 const closeModalBtn = document.getElementById('closeModalBtn');
 
-const whatsappValue = document.getElementById('whatsappValue');
-const telegramValue = document.getElementById('telegramValue');
+const whatsappCard = document.getElementById('whatsappCard');
+const telegramCard = document.getElementById('telegramCard');
 
-const saveWhatsappBtn = document.getElementById('saveWhatsappBtn');
-const saveTelegramBtn = document.getElementById('saveTelegramBtn');
-
-const openWhatsappBtn = document.getElementById('openWhatsappBtn');
-const openTelegramBtn = document.getElementById('openTelegramBtn');
+const whatsappHint = document.getElementById('whatsappHint');
+const telegramHint = document.getElementById('telegramHint');
 
 function openModal(){
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal(){
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
 
-function normalizeWhatsApp(input){
-  const v = (input || '').trim();
-  if(!v) return '';
-  if(v.startsWith('http://') || v.startsWith('https://')) return v;
-  if(v.includes('wa.me/')) return 'https://' + v.replace(/^https?:\/\//,'');
-  // phone number
-  const digits = v.replace(/\s+/g,'');
-  // If user types +94..., wa.me expects digits only (no +)
-  const waDigits = digits.replace(/^\+/, '');
-  return 'https://wa.me/' + waDigits;
+function setContactLink(el, hintEl, link){
+  const v = (link || '').trim();
+  if(!v){
+    el.classList.add('disabled');
+    el.href = '#';
+    hintEl.textContent = 'Not set (edit script.js to add your link)';
+    return;
+  }
+  el.classList.remove('disabled');
+  el.href = v;
+  hintEl.textContent = v;
 }
 
-function normalizeTelegram(input){
-  const v = (input || '').trim();
-  if(!v) return '';
-  if(v.startsWith('http://') || v.startsWith('https://')) return v;
-  if(v.startsWith('@')) return 'https://t.me/' + v.slice(1);
-  if(v.includes('t.me/')) return 'https://' + v.replace(/^https?:\/\//,'');
-  return 'https://t.me/' + v;
-}
-
-function refreshLinks(){
-  const waRaw = localStorage.getItem('sasiya_whatsapp') || '';
-  const tgRaw = localStorage.getItem('sasiya_telegram') || '';
-
-  whatsappValue.value = waRaw;
-  telegramValue.value = tgRaw;
-
-  const waLink = normalizeWhatsApp(waRaw);
-  const tgLink = normalizeTelegram(tgRaw);
-
-  openWhatsappBtn.href = waLink || '#';
-  openTelegramBtn.href = tgLink || '#';
-
-  openWhatsappBtn.classList.toggle('disabled', !waLink);
-  openTelegramBtn.classList.toggle('disabled', !tgLink);
+function applyLogos(){
+  const imgs = document.querySelectorAll('img[data-logo-key]');
+  imgs.forEach(img => {
+    const key = img.getAttribute('data-logo-key');
+    const url = (LOGO_URLS[key] || '').trim();
+    if(url){
+      img.src = url;
+    }
+  });
 }
 
 moreWorkBtn.addEventListener('click', () => {
-  refreshLinks();
   openModal();
 });
-
 closeModalBtn.addEventListener('click', closeModal);
 
 modal.addEventListener('click', (e) => {
@@ -77,14 +85,6 @@ window.addEventListener('keydown', (e) => {
   if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
 });
 
-saveWhatsappBtn.addEventListener('click', () => {
-  localStorage.setItem('sasiya_whatsapp', whatsappValue.value.trim());
-  refreshLinks();
-});
-
-saveTelegramBtn.addEventListener('click', () => {
-  localStorage.setItem('sasiya_telegram', telegramValue.value.trim());
-  refreshLinks();
-});
-
-refreshLinks();
+setContactLink(whatsappCard, whatsappHint, WHATSAPP_LINK);
+setContactLink(telegramCard, telegramHint, TELEGRAM_LINK);
+applyLogos();
