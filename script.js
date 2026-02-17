@@ -6,8 +6,8 @@
 // Examples:
 //   WHATSAPP_LINK = "https://wa.me/94XXXXXXXXX"
 //   TELEGRAM_LINK = "https://t.me/yourusername"
-const WHATSAPP_LINK = "";  // <-- PASTE YOUR WHATSAPP LINK HERE
-const TELEGRAM_LINK = "";  // <-- PASTE YOUR TELEGRAM LINK HERE
+const WHATSAPP_LINK = "https://wa.me/message/P52FQIMNSRYUM1";  // <-- PASTE YOUR WHATSAPP LINK HERE
+const TELEGRAM_LINK = "https://t.me/Sasi_kyc_1";  // <-- PASTE YOUR TELEGRAM LINK HERE
 
 // Logo image URLs (optional)
 // If you add a URL here, it will replace the default SVG placeholder.
