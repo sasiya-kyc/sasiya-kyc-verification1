@@ -19,7 +19,7 @@ const LOGO_URLS = {
   bitget: "https://img.sanishtech.com/u/a75b429ef3852dc4c54d18de2eda8aa0.png",       // <-- PASTE BITGET LOGO DIRECT LINK
   hetzner: "https://img.sanishtech.com/u/2652271702622d0acc693239a2762221.png",      // <-- PASTE HETZNER LOGO DIRECT LINK
   oraclecloud: "https://img.sanishtech.com/u/1be1e0e5c19a35c4cd7b714642fdb782.png",  // <-- PASTE ORACLE CLOUD LOGO DIRECT LINK
-  okx: ""           // <-- PASTE OKX LOGO DIRECT LINK
+  okx: "https://img.sanishtech.com/u/0f80faa0d40738e50c6e2096fc4b6828.png"           // <-- PASTE OKX LOGO DIRECT LINK
 };
 
 // ================================
