@@ -17,7 +17,7 @@ const LOGO_URLS = {
   binance: "https://img.sanishtech.com/u/1591fc2137edf2af8c441c129578aa3e.jpg",      // <-- PASTE BINANCE LOGO DIRECT LINK
   cryptobot: "https://img.sanishtech.com/u/c86d77a26ae3d2c0bc240bffe02b3931.jpg",    // <-- PASTE CRYPTO BOT LOGO DIRECT LINK
   bitget: "https://img.sanishtech.com/u/a75b429ef3852dc4c54d18de2eda8aa0.png",       // <-- PASTE BITGET LOGO DIRECT LINK
-  hetzner: "",      // <-- PASTE HETZNER LOGO DIRECT LINK
+  hetzner: "https://img.sanishtech.com/u/2652271702622d0acc693239a2762221.png",      // <-- PASTE HETZNER LOGO DIRECT LINK
   oraclecloud: "",  // <-- PASTE ORACLE CLOUD LOGO DIRECT LINK
   okx: ""           // <-- PASTE OKX LOGO DIRECT LINK
 };
