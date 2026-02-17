@@ -13,8 +13,8 @@ const TELEGRAM_LINK = "https://t.me/Sasi_kyc_1";  // <-- PASTE YOUR TELEGRAM LIN
 // If you add a URL here, it will replace the default SVG placeholder.
 // Use direct image links (png/svg/webp/jpg). Recommended: SVG/PNG.
 const LOGO_URLS = {
-  bybit: "https://img.sanishtech.com/u/410056a370aae2e3aa1b023764424aef.jpg",        // <-- PASTE BYBIT LOGO DIRECT LINK
-  binance: "https://img.sanishtech.com/u/1591fc2137edf2af8c441c129578aa3e.jpg",      // <-- PASTE BINANCE LOGO DIRECT LINK
+  bybit: "https://ibb.co/F4y1LrXH",        // <-- PASTE BYBIT LOGO DIRECT LINK
+  binance: "",      // <-- PASTE BINANCE LOGO DIRECT LINK
   cryptobot: "https://img.sanishtech.com/u/c86d77a26ae3d2c0bc240bffe02b3931.jpg",    // <-- PASTE CRYPTO BOT LOGO DIRECT LINK
   bitget: "https://img.sanishtech.com/u/a75b429ef3852dc4c54d18de2eda8aa0.png",       // <-- PASTE BITGET LOGO DIRECT LINK
   hetzner: "https://img.sanishtech.com/u/2652271702622d0acc693239a2762221.png",      // <-- PASTE HETZNER LOGO DIRECT LINK
