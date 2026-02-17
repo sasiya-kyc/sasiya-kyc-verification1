@@ -34,14 +34,14 @@
   <main class="container">
     <section class="hero">
       <h1 class="h1">Premium KYC / Verification Services</h1>
-      <p class="lead">Select a service below. Prices shown are the range you provided, with a short summary for each item.</p>
+      <p class="lead">Prices shown are the range you provided, with a short summary for each item. Logos can be configured via <b>script.js</b>.</p>
     </section>
 
     <section class="cards" aria-label="Service list">
       <!-- BYBIT -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/bybit.svg" alt="BYBIT logo" />
+          <img class="logo" data-logo-key="bybit" src="assets/bybit.svg" alt="BYBIT logo" />
           <div class="meta">
             <div class="name">BYBIT</div>
             <div class="price">$3 – $4</div>
@@ -58,7 +58,7 @@
       <!-- BINANCE -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/binance.svg" alt="BINANCE logo" />
+          <img class="logo" data-logo-key="binance" src="assets/binance.svg" alt="BINANCE logo" />
           <div class="meta">
             <div class="name">BINANCE</div>
             <div class="price">$3</div>
@@ -75,7 +75,7 @@
       <!-- CRYPTO BOT -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/cryptobot.svg" alt="CRYPTO BOT logo" />
+          <img class="logo" data-logo-key="cryptobot" src="assets/cryptobot.svg" alt="CRYPTO BOT logo" />
           <div class="meta">
             <div class="name">CRYPTO BOT</div>
             <div class="price">$1</div>
@@ -92,7 +92,7 @@
       <!-- BITGET -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/bitget.svg" alt="BITGET logo" />
+          <img class="logo" data-logo-key="bitget" src="assets/bitget.svg" alt="BITGET logo" />
           <div class="meta">
             <div class="name">BITGET</div>
             <div class="price">$3</div>
@@ -106,10 +106,10 @@
         </div>
       </article>
 
-      <!-- HATZNER -->
+      <!-- HETZNER -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/hetzner.svg" alt="HETZNER logo" />
+          <img class="logo" data-logo-key="hetzner" src="assets/hetzner.svg" alt="HETZNER logo" />
           <div class="meta">
             <div class="name">HETZNER</div>
             <div class="price">$6</div>
@@ -126,7 +126,7 @@
       <!-- ORACLE CLOUD -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/oraclecloud.svg" alt="ORACLE CLOUD logo" />
+          <img class="logo" data-logo-key="oraclecloud" src="assets/oraclecloud.svg" alt="ORACLE CLOUD logo" />
           <div class="meta">
             <div class="name">ORACLE CLOUD</div>
             <div class="price">$7 – $8</div>
@@ -143,7 +143,7 @@
       <!-- OKX -->
       <article class="card" tabindex="0">
         <div class="cardTop">
-          <img class="logo" src="assets/okx.svg" alt="OKX logo" />
+          <img class="logo" data-logo-key="okx" src="assets/okx.svg" alt="OKX logo" />
           <div class="meta">
             <div class="name">OKX</div>
             <div class="price">$3</div>
@@ -160,8 +160,8 @@
 
     <section class="note">
       <div class="noteInner">
-        <div class="noteTitle">Contact</div>
-        <div class="noteText">Tap <b>MORE WORK</b> to open contact details. (WhatsApp / Telegram fields are editable.)</div>
+        <div class="noteTitle">Logo links + Contact links</div>
+        <div class="noteText">To set real logos and your WhatsApp/Telegram, open <b>script.js</b> and paste the links into the placeholders.</div>
       </div>
     </section>
   </main>
@@ -173,49 +173,37 @@
       <div class="modalHeader">
         <div>
           <div class="modalTitle">MORE WORK</div>
-          <div class="modalSub">Contact me on WhatsApp / Telegram</div>
+          <div class="modalSub">Tap a contact to open</div>
         </div>
-        <button class="iconBtn" id="closeModalBtn" type="button" aria-label="Close">
-          ✕
-        </button>
+        <button class="iconBtn" id="closeModalBtn" type="button" aria-label="Close">✕</button>
       </div>
 
       <div class="modalBody">
         <div class="contactGrid">
-          <div class="contactCard">
+          <a class="contactCard linkCard" id="whatsappCard" href="#" target="_blank" rel="noopener">
             <div class="contactTop">
               <img class="contactLogo" src="assets/whatsapp.svg" alt="WhatsApp" />
               <div>
                 <div class="contactLabel">WHATSAPP</div>
-                <div class="contactHint">Add your number or wa.me link</div>
+                <div class="contactHint" id="whatsappHint">Set your WhatsApp link in script.js</div>
               </div>
             </div>
-            <div class="field">
-              <label for="whatsappValue">Your WhatsApp</label>
-              <input id="whatsappValue" type="text" placeholder="https://wa.me/message/P52FQIMNSRYUM1" />
-            </div>
-            <button class="btn" id="saveWhatsappBtn" type="button">Save</button>
-            <a class="btn secondary" id="openWhatsappBtn" href="#" target="_blank" rel="noopener">Open WhatsApp</a>
-          </div>
+            <div class="tap">TAP TO OPEN</div>
+          </a>
 
-          <div class="contactCard">
+          <a class="contactCard linkCard" id="telegramCard" href="#" target="_blank" rel="noopener">
             <div class="contactTop">
               <img class="contactLogo" src="assets/telegram.svg" alt="Telegram" />
               <div>
                 <div class="contactLabel">TELEGRAM</div>
-                <div class="contactHint">Add your @username or t.me link</div>
+                <div class="contactHint" id="telegramHint">Set your Telegram link in script.js</div>
               </div>
             </div>
-            <div class="field">
-              <label for="telegramValue">Your Telegram</label>
-              <input id="telegramValue" type="text" placeholder="https://t.me/Sasi_kyc_1" />
-            </div>
-            <button class="btn" id="saveTelegramBtn" type="button">Save</button>
-            <a class="btn secondary" id="openTelegramBtn" href="#" target="_blank" rel="noopener">Open Telegram</a>
-          </div>
+            <div class="tap">TAP TO OPEN</div>
+          </a>
         </div>
 
-        <p class="tiny">Tip: The details you save are stored in your browser (localStorage). When you deploy to Netlify, it still works for each visitor’s browser.</p>
+        <p class="tiny"><b>Note:</b> This site is read-only for visitors (no edit fields). Only you can change details by editing the code in GitHub.</p>
       </div>
     </div>
   </div>
@@ -223,3 +211,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
