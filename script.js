@@ -13,7 +13,7 @@ const TELEGRAM_LINK = "https://t.me/Sasi_kyc_1";  // <-- PASTE YOUR TELEGRAM LIN
 // If you add a URL here, it will replace the default SVG placeholder.
 // Use direct image links (png/svg/webp/jpg). Recommended: SVG/PNG.
 const LOGO_URLS = {
-  bybit: "",        // <-- PASTE BYBIT LOGO DIRECT LINK
+  bybit: "https://img.sanishtech.com/u/410056a370aae2e3aa1b023764424aef.jpg",        // <-- PASTE BYBIT LOGO DIRECT LINK
   binance: "",      // <-- PASTE BINANCE LOGO DIRECT LINK
   cryptobot: "",    // <-- PASTE CRYPTO BOT LOGO DIRECT LINK
   bitget: "",       // <-- PASTE BITGET LOGO DIRECT LINK
