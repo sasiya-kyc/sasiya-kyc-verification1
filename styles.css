@@ -6,7 +6,6 @@
   --text:#EDEDF6;
   --muted:#B7B7C8;
   --neon:#ff2a2a;
-  --neon2:#ff4d4d;
   --shadow: rgba(255,42,42,0.18);
   --shadow2: rgba(255,42,42,0.08);
   --stroke: rgba(255,42,42,0.45);
@@ -108,18 +107,6 @@ body{
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
   outline: none;
 }
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius: 18px;
-  background: radial-gradient(circle at 20% 10%, rgba(255,42,42,0.25), transparent 40%),
-              radial-gradient(circle at 80% 0%, rgba(255,255,255,0.10), transparent 45%);
-  pointer-events:none;
-  opacity:0.85;
-  mask: linear-gradient(#000, transparent);
-}
-
 .card:hover, .card:focus{
   transform: translateY(-4px) scale(1.01);
   border-color: var(--stroke);
@@ -137,7 +124,10 @@ body{
   padding: 10px;
   border: 1px solid rgba(255,42,42,0.22);
   box-shadow: 0 10px 24px rgba(0,0,0,0.45), 0 0 30px rgba(255,42,42,0.12);
+  object-fit: contain;
+  display:block;
 }
+
 .meta{ display:flex; flex-direction:column; gap:4px; }
 .name{ font-weight: 700; letter-spacing:0.04em; }
 .price{ color: rgba(255, 180, 180, 0.95); font-weight: 600; }
@@ -186,13 +176,6 @@ body{
 }
 .btn:hover{ transform: translateY(-1px); border-color: rgba(255,42,42,0.65); background: rgba(255,42,42,0.18); }
 .btn:active{ transform: translateY(0); }
-
-.btn.secondary{
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,42,42,0.22);
-  letter-spacing: 0.06em;
-  font-weight: 600;
-}
 
 .moreWork{ padding: 11px 16px; }
 .btnGlow{
@@ -246,7 +229,13 @@ body{
   background: rgba(255,42,42,0.06);
   border: 1px solid rgba(255,42,42,0.22);
   box-shadow: 0 22px 70px rgba(0,0,0,0.55);
+  text-decoration:none;
+  color: var(--text);
+  display:block;
 }
+.linkCard:hover{ border-color: rgba(255,42,42,0.50); transform: translateY(-2px); }
+.linkCard{ transition: transform .15s ease, border-color .15s ease; }
+
 .contactTop{ display:flex; align-items:center; gap:12px; margin-bottom: 10px; }
 .contactLogo{
   width: 42px; height: 42px;
@@ -254,22 +243,28 @@ body{
   padding: 10px;
   background: rgba(0,0,0,0.28);
   border: 1px solid rgba(255,42,42,0.18);
+  object-fit: contain;
 }
 .contactLabel{ font-weight: 800; letter-spacing:0.10em; font-size: 12px; }
 .contactHint{ color: var(--muted); font-size: 13px; margin-top:4px; }
-
-.field{ display:flex; flex-direction:column; gap:6px; margin: 10px 0 12px; }
-label{ font-size: 12px; color: rgba(255,240,240,0.88); letter-spacing:0.04em; }
-input{
-  width:100%;
-  padding: 11px 12px;
+.tap{
+  margin-top: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: rgba(255,220,220,0.92);
+  padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,42,42,0.25);
-  background: rgba(0,0,0,0.38);
-  color: var(--text);
-  outline:none;
+  border: 1px solid rgba(255,42,42,0.26);
+  background: rgba(0,0,0,0.22);
+  text-align:center;
 }
-input:focus{ border-color: rgba(255,42,42,0.55); box-shadow: 0 0 0 3px rgba(255,42,42,0.12); }
+
+.disabled{
+  pointer-events:none;
+  opacity:0.55;
+  filter: grayscale(0.2);
+}
 
 .tiny{ color: var(--muted); font-size: 12px; line-height: 1.55; margin: 12px 2px 0; }
 
