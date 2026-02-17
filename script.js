@@ -15,7 +15,7 @@ const TELEGRAM_LINK = "https://t.me/Sasi_kyc_1";  // <-- PASTE YOUR TELEGRAM LIN
 const LOGO_URLS = {
   bybit: "https://img.sanishtech.com/u/410056a370aae2e3aa1b023764424aef.jpg",        // <-- PASTE BYBIT LOGO DIRECT LINK
   binance: "https://img.sanishtech.com/u/1591fc2137edf2af8c441c129578aa3e.jpg",      // <-- PASTE BINANCE LOGO DIRECT LINK
-  cryptobot: "",    // <-- PASTE CRYPTO BOT LOGO DIRECT LINK
+  cryptobot: "https://img.sanishtech.com/u/c86d77a26ae3d2c0bc240bffe02b3931.jpg",    // <-- PASTE CRYPTO BOT LOGO DIRECT LINK
   bitget: "",       // <-- PASTE BITGET LOGO DIRECT LINK
   hetzner: "",      // <-- PASTE HETZNER LOGO DIRECT LINK
   oraclecloud: "",  // <-- PASTE ORACLE CLOUD LOGO DIRECT LINK
